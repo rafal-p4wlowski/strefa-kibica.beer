@@ -216,7 +216,7 @@ nav ul li a:hover {
     height: 200px;
     padding: 20px;
     background: rgba(49, 50, 52, 0.35);
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     text-align: justify; 
     transform: translateY(-50%);
 }
