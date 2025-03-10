@@ -422,17 +422,11 @@ nav ul li a:hover {
 
 @media (min-width: 768px) { 
     #menu {
-        margin-top: 90em;
+        margin-top: 80em;
     }
 }
 
-@media (min-width: 801px) { 
-    #menu {
-        margin-top: 20em;
-    }
-}
-
-@media (min-width: 1025px) { 
+@media (min-width: 769px) { 
     #menu {
         margin-top: 20em;
     }
