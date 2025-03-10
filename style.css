@@ -328,6 +328,24 @@ nav ul li a:hover {
     height: 100vh;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     /* Układ dla hamburgera */
     .menu-toggle {
@@ -402,27 +420,9 @@ nav ul li a:hover {
     }
 }
 
-@media (min-width: 320px) { 
-    #menu {
-        margin-top: 110em;
-    }
-}
-
-@media (min-width: 480px) { 
-    #menu {
-        margin-top: 100em;
-    }
-}
-
-@media (min-width: 600px) { 
-    #menu {
-        margin-top: 5em;
-    }
-}
-
 @media (min-width: 768px) { 
     #menu {
-        margin-top: 20em;
+        margin-top: 90em;
     }
 }
 
