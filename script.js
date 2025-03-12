@@ -41,3 +41,25 @@ dots.forEach((dot, i) => {
 images[0].classList.add("active");
 dots[0].classList.add("active");
 startSlideshow();
+
+
+//MODAL
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const captionText = document.getElementById("caption");
+
+const menuImages = document.querySelectorAll(".menu-row img");
+
+menuImages.forEach(image => {
+    image.addEventListener("click", function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    });
+});
+
+const closeModal = document.querySelector(".close");
+
+closeModal.addEventListener("click", function() {
+    modal.style.display = "none";
+});

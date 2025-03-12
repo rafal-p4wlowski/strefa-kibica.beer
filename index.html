@@ -32,7 +32,6 @@
                 <li><a href="#main">Strona główna</a></li>
                 <li><a href="#sport">Sport i rozrywka</a></li>
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
@@ -98,13 +97,41 @@
                     dania główne. Zapraszamy na pyszne obiady, kolacje oraz przekąski!</p>
             </div>
         </div>
-        <div class="menu-card">
+        <div class="menu-gallery">
+            <div class="menu-row">
+
+                <img src="1_burgery.png" alt="1_burgery">
+                <img src="2_burgery.png" alt="2_burgery">
+                <img src="3_pizza.png" alt="3_pizza">
+                <img src="4_pizza.png" alt="4_pizza">
+            </div>
+            <div class="menu-row">
+                <img src="5_napoje_gorące.png" alt="5_napoje_gorące">
+                <img src="6_napoje_gorące.png" alt="6_napoje_gorące">
+                <img src="7_napoje_zimne.png" alt="7_napoje_zimne">
+                <img src="8_napoje_zimne.png" alt="8_napoje_zimne">
+            </div>
         </div>
     </section>
-    <section id="galeria"></section>
-    <footer id="kontakt"></footer>
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    <footer id="kontakt">
+        <div class="container_footer">
+            <div class="contact">
+                <h2>Kontakt</h2>
+                <p>Strefa Kibica</p>
+                <p>ul. Sportowa 1</p>
+                <p>42-200 Częstochowa</p>
+                <p>tel. 123 456 789</p>
+                <p>e-mail: <a href="mailto:kontakt@strefakibica.pl">kontakt@strefakibica.beer</a></p>
+            </div>
+        </div>
+    </footer>
+    </footer>
     <!--Start of Tawk.to Script-->
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -114,8 +141,7 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
-    </script> -->
+    </script>
     <!--End of Tawk.to Script-->
 </body>
-
 </html>

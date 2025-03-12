@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +19,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 1000;
     display: flex;
     align-items: center;
     padding: 0 10%;
@@ -46,7 +47,6 @@ header {
 nav ul {
     list-style-type: none;
     display: flex;
-    gap: 1em;
 }
 
 nav ul li {
@@ -267,8 +267,7 @@ nav ul li a:hover {
 
 #menu {
     width: 100%;
-    height: 160vh;
-    scroll-margin-top: 8vh;
+    padding: 50px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -335,15 +334,102 @@ nav ul li a:hover {
     font-size: 1.2em;
 }
 
-.menu-card {
+.menu-gallery {
     width: 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+.menu-row {
+    display: flex;
+}
 
+.menu-row img {
+    width: 25%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease-out;
+    z-index: 1;
+}
 
+.menu-row img:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    cursor: pointer;
+}
 
+/* Modal */
+.modal {
+    display: none; /* Ukryty na początku */
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
 
+.modal-content {
+    margin: auto;
+    margin-top: 5%;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 2%;
+    right: 25%;
+    color: #f1f1f1;
+    font-size: 10em;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#kontakt {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(49, 50, 52, 0.5) 0%, rgba(49, 50, 52, 0.05) 100%);
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+.container_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20%;
+}
+
+.container_footer h2 {
+    font-size: 3em;
+    margin: 10% 0;
+    color: #e6a01e;
+    align-items: center;
+}
+
+.container_footer p {
+    font-size: 1.2em;
+    text-align: justify;
+    margin: 5% 0;
+}
 
 
 
