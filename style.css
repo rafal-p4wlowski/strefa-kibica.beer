@@ -1,3 +1,4 @@
+/* Resetowanie domyślnych styli przeglądarki */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +7,14 @@
     scroll-behavior: smooth;
 }
 
+/* Stylowanie ciała strony */
 body {
     font-family: Arial, sans-serif;
     background: rgb(49, 50, 52);
     scroll-behavior: smooth;
 }
 
+/* Stylowanie nagłówka */
 header {
     width: 100%;
     height: 50px;
@@ -25,6 +28,7 @@ header {
     padding: 0 10%;
 }
 
+/* Stylowanie kontenera */
 .container {
     display: flex;
     align-items: center;
@@ -32,11 +36,13 @@ header {
     width: 100%;
 }
 
+/* Stylowanie obrazów w kontenerze */
 .container img {
     height: 40px;
     width: auto;
 }
 
+/* Stylowanie tytułu w kontenerze */
 .container h1 {
     font-size: 1.5em;
     margin: 0;
@@ -44,6 +50,7 @@ header {
     color: #e6a01e;
 }
 
+/* Stylowanie linków nawigacyjnych */
 nav ul {
     list-style-type: none;
     display: flex;
@@ -65,6 +72,7 @@ nav ul li a {
     text-transform: uppercase;
 }
 
+/* Hover efekt dla linków nawigacyjnych */
 nav ul li a:hover {
     background-color: rgba(79, 79, 81, 0.5);
 }
@@ -91,7 +99,7 @@ nav ul li a:hover {
     transition: 0.4s;
 }
 
-/* Slider */
+/* Stylowanie slidera */
 #main {
     width: 100%;
     height: 100vh;
@@ -134,7 +142,7 @@ nav ul li a:hover {
     opacity: 1;
 }
 
-/* Kropki */
+/* Stylowanie kropek */
 .indicators {
     position: absolute;
     bottom: 20px;
@@ -158,6 +166,7 @@ nav ul li a:hover {
     background-color: white;
 }
 
+/* Opis główny */
 .opisMain {
     position: absolute;
     top: 50%;
@@ -181,6 +190,7 @@ nav ul li a:hover {
     font-size: 1.2em;
 }
 
+/* Stylowanie sekcji sport */
 #sport {
     width: 100%;
     height: 120vh;
@@ -201,6 +211,7 @@ nav ul li a:hover {
     margin: 0 25%;
 }
 
+/* Stylowanie sekcji rozrywki */
 .rozrywka h2 {
     margin-top: 100px;
     font-size: 2.5em;
@@ -265,6 +276,7 @@ nav ul li a:hover {
     font-size: larger;
 }
 
+/* Stylowanie sekcji menu */
 #menu {
     width: 100%;
     padding: 50px 0;
@@ -275,7 +287,7 @@ nav ul li a:hover {
 }
 
 .image-wrapper {
-    background-image: url('menu-min.webp');
+    background-image: url('/images/menu-min.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -434,7 +446,7 @@ nav ul li a:hover {
     top: 50%;
     width: 2em;
     height: 2em;
-    background: url('full_screen-min.webp') 0 0 no-repeat;
+    background: url('/images/full_screen-min.webp') 0 0 no-repeat;
     background-size: cover;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -517,6 +529,7 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Stylowanie sekcji kontakt */
 #kontakt {
     width: 100%;
     height: 100vh;
@@ -551,21 +564,8 @@ nav ul li a:hover {
     margin: 5% 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Układ dla hamburgera */
 @media (max-width: 768px) {
-    /* Układ dla hamburgera */
     .menu-toggle {
         display: block;
     }
@@ -637,6 +637,7 @@ nav ul li a:hover {
     }
 }
 
+/* Responsywność dla różnych szerokości ekranów */
 @media only screen and (max-width: 320px),
 (min-width: 320px) {
     #menu {
