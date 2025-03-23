@@ -1,5 +1,4 @@
-# Strefa Kibica 🍻⚽
-
+# [Strefa Kibica 🍻⚽](https://im-rafax.github.io/strefa-kibica.beer/)
 **Strona internetowa dla baru sportowego i pubu – idealne miejsce dla kibiców!**
 
 ## 📌 Opis projektu
