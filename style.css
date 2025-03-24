@@ -287,7 +287,7 @@ nav ul li a:hover {
 }
 
 .image-wrapper {
-    background-image: url('/images/menu-min.webp');
+    background-image: url('images/menu-min.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -446,7 +446,7 @@ nav ul li a:hover {
     top: 50%;
     width: 2em;
     height: 2em;
-    background: url('/images/full_screen-min.webp') 0 0 no-repeat;
+    background: url('images/full_screen-min.webp') 0 0 no-repeat;
     background-size: cover;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
