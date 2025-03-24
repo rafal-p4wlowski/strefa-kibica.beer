@@ -1,5 +1,4 @@
-# Strefa Kibica 🍻⚽
-
+# [Strefa Kibica 🍻⚽](https://strefa-kibica.pages.dev/)
 **Strona internetowa dla baru sportowego i pubu – idealne miejsce dla kibiców!**
 
 ## 📌 Opis projektu
