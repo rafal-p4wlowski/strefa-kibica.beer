@@ -99,6 +99,19 @@ nav ul li a:hover {
     transition: 0.4s;
 }
 
+/* Animacja hamburgera */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Stylowanie slidera */
 #main {
     width: 100%;
@@ -305,9 +318,6 @@ nav ul li a:hover {
     width: 100%;
     height: 30%;
     left: 0;
-}
-
-.image-wrapper::before {
     top: 0;
     background: linear-gradient(to bottom, rgba(49, 50, 52, 1), rgba(49, 50, 52, 0));
 }
@@ -318,9 +328,6 @@ nav ul li a:hover {
     width: 100%;
     height: 30%;
     left: 0;
-}
-
-.image-wrapper::after {
     bottom: 0;
     background: linear-gradient(to top, rgba(49, 50, 52, 0.9), rgba(49, 50, 52, 0));
 }
@@ -334,6 +341,7 @@ nav ul li a:hover {
     border-radius: 10px;
     margin-right: 42%;
     margin-bottom: 10%;
+    z-index: 1;
 }
 
 .opisMenu h2 {
@@ -366,6 +374,7 @@ nav ul li a:hover {
 .gallery-item figure {
     position: relative;
     margin: 0;
+    cursor: pointer;
 }
 
 .gallery-item figure img {
@@ -373,8 +382,7 @@ nav ul li a:hover {
     width: 100%;
     height: auto;
     object-fit: cover;
-    -webkit-transition: all 8s linear;
-    transition: all 8s linear;
+    transition: all 0.5s ease;
 }
 
 .gallery-item figure:after {
@@ -386,12 +394,7 @@ nav ul li a:hover {
     height: 100%;
     background-color: rgba(49, 50, 52, 0.8);
     opacity: 0.7;
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
-}
-
-.gallery-item.project-light figure:after {
-    opacity: 0.4;
 }
 
 .gallery-item figcaption {
@@ -413,11 +416,8 @@ nav ul li a:hover {
     font-size: 12px;
     color: #fff;
     letter-spacing: 0.5em;
-    -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
     text-transform: uppercase;
 }
@@ -433,9 +433,7 @@ nav ul li a:hover {
     background-color: rgba(230, 160, 30, 0.8);
     overflow: hidden;
     opacity: 0;
-    -webkit-transform: scale(0.3);
     transform: scale(0.3);
-    -webkit-transition: all 0.7s;
     transition: all 0.7s;
 }
 
@@ -448,7 +446,6 @@ nav ul li a:hover {
     height: 2em;
     background: url('images/full_screen-min.webp') 0 0 no-repeat;
     background-size: cover;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -458,8 +455,7 @@ nav ul li a:hover {
 }
 
 .gallery-item figure:hover img {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
+    transform: scale(1.2);
 }
 
 .gallery-item figure:hover .gallery-text {
@@ -469,32 +465,14 @@ nav ul li a:hover {
 
 .gallery-item figure:hover .gallery-zoom {
     opacity: 1;
-    -webkit-transform: scale(1);
     transform: scale(1);
 }
 
-/* Responsywność dla mniejszych ekranów */
-@media screen and (max-width: 768px) {
-    .menu-row {
-        flex-wrap: wrap;
-    }
-    
-    .gallery-item {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .gallery-item {
-        width: 100%;
-    }
-}
-
-/* Modal */
+/* Modal dla obrazów */
 .modal {
-    display: none; /* Ukryty na początku */
+    display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1100;
     padding-top: 60px;
     left: 0;
     top: 0;
@@ -506,66 +484,99 @@ nav ul li a:hover {
 
 .modal-content {
     margin: auto;
-    margin-top: 5%;
+    display: block;
+    width: auto;
+    max-width: 80%;
+    max-height: 80vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#modalCaption {
+    margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
+    text-align: center;
+    color: #e6a01e;
+    padding: 10px 0;
+    font-size: 1.2em;
 }
 
 .close {
     position: absolute;
-    top: 2%;
-    right: 25%;
+    top: 15px;
+    right: 35px;
     color: #f1f1f1;
-    font-size: 10em;
+    font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
+    color: #e6a01e;
     text-decoration: none;
-    cursor: pointer;
+}
+
+/* Animacja zamykania i otwierania modalu */
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.modal-content, #modalCaption {
+    animation-name: fadeIn;
+    animation-duration: 0.6s;
 }
 
 /* Stylowanie sekcji kontakt */
 #kontakt {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to bottom, rgba(49, 50, 52, 0.5) 0%, rgba(49, 50, 52, 0.05) 100%);
-    bottom: 0;
-    left: 0;
-    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10%;
+    padding: 50px 10%;
 }
 
 .container_footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    margin-bottom: 20%;
 }
 
-.container_footer h2 {
+.contact {
+    text-align: center;
+}
+
+.contact h2 {
     font-size: 3em;
-    margin: 10% 0;
+    margin-bottom: 30px;
     color: #e6a01e;
-    align-items: center;
 }
 
-.container_footer p {
+.contact p {
     font-size: 1.2em;
-    text-align: justify;
-    margin: 5% 0;
+    margin: 10px 0;
 }
 
-/* Układ dla hamburgera */
+.contact a {
+    color: #e6a01e;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsywność */
 @media (max-width: 768px) {
+    /* Menu hamburger */
     .menu-toggle {
         display: block;
     }
@@ -577,106 +588,93 @@ nav ul li a:hover {
         top: 50px;
         right: 0;
         width: 200px;
-        background-color: rgba(79, 79, 81, 0.5);
+        background-color: rgba(79, 79, 81, 0.9);
         padding: 10px;
         text-align: center;
         border-radius: 5px;
         transform: translateX(100%);
         transition: transform 0.4s ease-in-out;
+        z-index: 1001;
     }
 
     .nav-links.active {
         transform: translateX(0);
     }
 
+    /* Sekcja sport */
+    .opisSport p {
+        margin: 0 10%;
+    }
+
+    /* Strefa rozrywki */
     .strefy {
         flex-direction: column;
     }
 
     .kregle, .bilard, .dart {
         width: 80%;
-        margin: 10em auto;
-        padding-bottom: 1.5em;
+        margin: 20px auto;
     }
 
-    .kregle h3, .bilard h3, .dart h3 {
-        margin-top: 1em;
+    /* Menu galeria */
+    .menu-row {
+        flex-wrap: wrap;
     }
+    
+    .gallery-item {
+        width: 50%;
+    }
+    
+    /* Kontakt */
+    #kontakt {
+        padding: 30px 5%;
+    }
+    
+    /* Opis główny */
+    .opisMain {
+        width: 80%;
+        right: 10%;
+    }
+    
+    /* Modal */
+    .modal-content {
+        max-width: 95%;
+    }
+    
+    .close {
+        font-size: 30px;
+        right: 20px;
+    }
+}
 
-    #menu {
-        display: flex;
-        align-items: center;
+@media (max-width: 480px) {
+    .gallery-item {
         width: 100%;
-        box-sizing: border-box;
     }
-
-    .image-wrapper {
-        height: auto;
-        min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-
+    
     .opisMenu {
+        margin-right: 0;
         max-width: 90%;
-        text-align: center;
-        margin: 20px 0; /* Zwiększony margines w pionie */
     }
+    
+    .contact h2 {
+        font-size: 2.2em;
+    }
+    
+    .contact p {
+        font-size: 1em;
+    }
+}
 
-    .menu-card {
-        height: auto;
+/* Marginesy dla sekcji menu w różnych rozmiarach ekranu */
+@media (max-width: 1024px) {
+    #menu {
+        margin-top: 80px;
+    }
+}
+
+@media (min-width: 1025px) {
+    #menu {
         margin-top: 20px;
-    }
-
-    /* Zwiększenie odstępu między różnymi sekcjami */
-    #sport {
-        margin-bottom: 50px; /* Odstęp przed sekcją #menu */
-    }
-}
-
-/* Responsywność dla różnych szerokości ekranów */
-@media only screen and (max-width: 320px),
-(min-width: 320px) {
-    #menu {
-        margin-top: 120em;
-    }
-}
-
-@media only screen and (min-width: 375px) {
-    #menu {
-        margin-top: 110em;
-    }
-}
-
-@media only screen and (min-width: 425px) {
-    #menu {
-        margin-top: 100em;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    #menu {
-        margin-top: 25em;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    #menu {
-        margin-top: 20em;
-    }
-}
-
-@media only screen and (min-width: 1440px) {
-    #menu {
-        margin-top: 20em;
-    }
-}
-
-@media only screen and (min-width: 2560px) {
-    #menu {
-        margin-top: 20em;
     }
 }

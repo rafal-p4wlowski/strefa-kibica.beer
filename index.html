@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strefa Kibica – Pub Sportowy w Częstochowie | Miejsce na mecze, kręgle, bilard, rzutki i rozrywkę</title>
     <meta name="description"
-        content="Strefa Kibica - najlepsze miejsce do oglądania wydarzeń sportowych w mieście! Oferujemy transmisje meczów, turnieje gier planszowych, quizy oraz imprezy tematyczne. Dołącz do nas i poczuj sportowe emocje!">
+        content="Strefa Kibica - najlepsze miejsce do oglądania wydarzeń sportowych w mieście! Oferujemy transmisje meczów, turnieje gier planszowych, quizy oraz imprezy tematyczne. Dołącz do nas!">
     <meta name="keywords" content="Strefa Kibica, sport, rozrywka, kręgle, bilard, rzutki, mecze, pub, kibice">
     <meta name="author" content="Kamil Pulka, Jan Pijanka, Rafał Pawłowski">
     <meta name="robots" content="follow">
@@ -40,7 +40,6 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#000000">
 
-    <!-- Początek Meta Tagi wygenerowane za pomocą https://www.opengraph.xyz -->
     <!-- Meta Tagi Facebook -->
     <meta property="og:url" content="https://strefa-kibica.pages.dev/">
     <meta property="og:type" content="website">
@@ -61,7 +60,6 @@
         content="Strefa Kibica - najlepsze miejsce dla kibiców sportowych. Oglądaj mecze, graj w kręgle, bilard i rzutki. Dołącz do nas!">
     <meta name="twitter:image"
         content="https://opengraph.b-cdn.net/production/images/ede6c4ec-6808-4968-a80c-fb63a3a09824.jpg?token=klYAPnt_a7UyUQU7ITgjOWeeE9Pnas0V0OEuhWmd7hg&height=800&width=1200&expires=33278210781">
-    <!-- Koniec Meta Tagi wygenerowane za pomocą https://www.opengraph.xyz -->
 
     <script type="application/ld+json">
         {
@@ -137,7 +135,7 @@
             <img src="images/logo-min.webp" alt="Logo Strefy Kibica">
 
             <!-- Przycisk menu -->
-            <button class="menu-toggle">
+            <button class="menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -231,7 +229,7 @@
             <div class="menu-row">
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/1_burgery-min.webp" alt="1_burgery">
+                        <img src="images/1_burgery-min.webp" alt="Burgery">
                         <figcaption>
                             <div class="gallery-text">Burgery</div>
                             <div class="gallery-zoom"></div>
@@ -240,7 +238,7 @@
                 </div>
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/2_burgery-min.webp" alt="2_burgery">
+                        <img src="images/2_burgery-min.webp" alt="Firmowy">
                         <figcaption>
                             <div class="gallery-text">Firmowy</div>
                             <div class="gallery-zoom"></div>
@@ -249,7 +247,7 @@
                 </div>
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/3_pizza-min.webp" alt="3_pizza">
+                        <img src="images/3_pizza-min.webp" alt="Pizza">
                         <figcaption>
                             <div class="gallery-text">Pizza</div>
                             <div class="gallery-zoom"></div>
@@ -258,7 +256,7 @@
                 </div>
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/4_pizza-min.webp" alt="4_pizza">
+                        <img src="images/4_pizza-min.webp" alt="Salami">
                         <figcaption>
                             <div class="gallery-text">Salami</div>
                             <div class="gallery-zoom"></div>
@@ -269,7 +267,7 @@
             <div class="menu-row">
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/5_napoje_gorace-min.webp" alt="5_napoje_gorące">
+                        <img src="images/5_napoje_gorace-min.webp" alt="Kawa Biała">
                         <figcaption>
                             <div class="gallery-text">Kawa Biała</div>
                             <div class="gallery-zoom"></div>
@@ -278,7 +276,7 @@
                 </div>
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/6_napoje_gorace-min.webp" alt="6_napoje_gorące">
+                        <img src="images/6_napoje_gorace-min.webp" alt="Napoje Gorące">
                         <figcaption>
                             <div class="gallery-text">Napoje Gorące</div>
                             <div class="gallery-zoom"></div>
@@ -287,7 +285,7 @@
                 </div>
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/7_napoje_zimne-min.webp" alt="7_napoje_zimne">
+                        <img src="images/7_napoje_zimne-min.webp" alt="Cola">
                         <figcaption>
                             <div class="gallery-text">Cola</div>
                             <div class="gallery-zoom"></div>
@@ -296,7 +294,7 @@
                 </div>
                 <div class="gallery-item">
                     <figure>
-                        <img src="images/8_napoje_zimne-min.webp" alt="8_napoje_zimne">
+                        <img src="images/8_napoje_zimne-min.webp" alt="Napoje Zimne">
                         <figcaption>
                             <div class="gallery-text">Napoje Zimne</div>
                             <div class="gallery-zoom"></div>
@@ -305,15 +303,16 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal dla obrazów menu -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="modalCaption"></div>
+        </div>
     </section>
-
-    <!-- Modal dla obrazów menu -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
+    
     <footer id="kontakt">
-
         <!-- Kontakt -->
         <div class="container_footer">
             <div class="contact">
@@ -322,15 +321,15 @@
                 <p>ul. Generała Jana Henryka Dąbrowskiego 73</p>
                 <p>42-202 Częstochowa</p>
                 <p>tel. 123 456 789</p>
-                <p>e-mail: <a href="mailto:kontakt@strefakibica.pl">kontakt@strefakibica.beer</a></p>
-                <p>Strefa Kibica: <a href="https://im-rafax.github.io/strefa-kibica.beer/">GitHub.com</a></p>
+                <p>e-mail: <a href="mailto:strefa.kibica.pcz@gmail.com">strefa.kibica.pcz@gmail.com</a></p>
+                <p>Strefa Kibica: <a href="https://rafal-p4wlowski.github.io/strefa-kibica.beer/">GitHub.com</a></p>
                 <p>Strefa Kibica: <a href="https://strefa-kibica.pages.dev/">Cloudflare.com</a></p>
                 <p>Strefa Kibica: <a href="https://strefa-kibica-beer.onrender.com/">Render.com</a></p>
             </div>
         </div>
     </footer>
 
-    <!--Początek Chatbot Tawk.to-->
+    <!--Chatbot Tawk.to-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
@@ -342,7 +341,6 @@
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
-    <!--Koniec Chatbot Tawk.to-->
 </body>
 
 </html>

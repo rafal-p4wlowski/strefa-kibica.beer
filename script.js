@@ -9,8 +9,8 @@ menuToggle.addEventListener("click", function () {
 });
 
 // Pobieranie elementów związanych ze sliderem
-let images = document.querySelectorAll(".slider img");
-let dots = document.querySelectorAll(".dot");
+const images = document.querySelectorAll(".slider img");
+const dots = document.querySelectorAll(".dot");
 let index = 0;
 let interval;
 
@@ -48,27 +48,56 @@ images[0].classList.add("active");
 dots[0].classList.add("active");
 startSlideshow(); // Rozpoczęcie pokazu slajdów
 
-// MODAL
+// MODAL - Usprawniona implementacja
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
-const captionText = document.getElementById("caption");
+const closeModal = document.querySelector(".close");
 
-// Pobieranie obrazów z menu
-const menuImages = document.querySelectorAll(".menu-row img");
+// Pobieranie wszystkich elementów figure z galerii menu
+const galleryItems = document.querySelectorAll(".gallery-item figure");
 
-// Event listener dla obrazów w menu
-menuImages.forEach(image => {
-    image.addEventListener("click", function() {
+// Event listener dla elementów galerii
+galleryItems.forEach(item => {
+    item.addEventListener("click", function() {
+        const img = this.querySelector("img");
+        const caption = this.querySelector(".gallery-text").textContent;
+        
         modal.style.display = "block"; // Wyświetlenie modala
-        modalImg.src = this.src; // Ustawienie źródła obrazu w modalu
-        captionText.innerHTML = this.alt; // Ustawienie podpisu obrazu
+        modalImg.src = img.src; // Ustawienie źródła obrazu w modalu
+        modalImg.alt = caption; // Ustawienie alternatywnego tekstu
+        
+        // Dodanie tytułu modalu jeśli istnieje element #modalCaption
+        const modalCaption = document.getElementById("modalCaption");
+        if (modalCaption) {
+            modalCaption.textContent = caption;
+        }
+        
+        // Zatrzymaj przewijanie strony gdy modal jest otwarty
+        document.body.style.overflow = "hidden";
     });
 });
 
-// Pobieranie elementu zamykającego modal
-const closeModal = document.querySelector(".close");
-
-// Event listener dla zamknięcia modala
+// Event listener dla zamknięcia modala (X)
 closeModal.addEventListener("click", function() {
-    modal.style.display = "none"; // Ukrycie modala
+    closeModalFunction();
 });
+
+// Zamknięcie modalu po kliknięciu poza obrazem
+modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+        closeModalFunction();
+    }
+});
+
+// Obsługa klawisza ESC do zamykania modalu
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && modal.style.display === "block") {
+        closeModalFunction();
+    }
+});
+
+// Funkcja zamykająca modal (unikam duplikacji kodu)
+function closeModalFunction() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
