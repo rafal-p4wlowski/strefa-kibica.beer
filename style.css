@@ -297,6 +297,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    scroll-margin-top: -70px;
 }
 
 .image-wrapper {
