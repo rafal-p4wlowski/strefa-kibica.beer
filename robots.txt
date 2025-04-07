@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /*.json$
+Disallow: /*.xml$
+Sitemap: https://strefa-kibica.beer/sitemap.github.io.xml
+Sitemap: https://strefa-kibica.beer/sitemap.onrender.xml
+Sitemap: https://strefa-kibica.beer/sitemap.pages.dev.xml
